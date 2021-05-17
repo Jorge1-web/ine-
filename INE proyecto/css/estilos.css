@@ -1,0 +1,116 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: sans-serif;
+}
+#wrapper{
+ margin-right: auto;
+ margin-left: auto;
+ max-width: 960px;
+ padding-right: 10px;
+ padding-left: 10px;
+}
+header{
+	height: 60px;
+	background: #bf01c7;
+	color: #fff;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+header:before{
+	content: '';
+	width: 200px;
+	height: 60px;
+	background-image: url("../logo/ine.png");
+	background-size: 100%;
+	background-repeat: none;
+	background-position: center center;
+	float: left;
+	display: block;
+	position: inherit;
+}
+
+#btn-menu{
+	display: none;
+}
+header .logo {
+	float:right;
+}
+
+header label{
+	font-size: 30px;
+	cursor: pointer;
+	display: none;
+  }
+.menu ul{
+	background: #bf01c7;
+	display: flex;
+	list-style: none;
+}
+
+.menu ul ul {
+	display: none;
+}
+
+.menu a{
+	display: block;
+	padding: 15px 20px;
+	color: #fff;
+	text-decoration: none;
+	width: 200px;
+
+}
+.menu a:hover {
+	background: rgba(0,0,0,0.3);
+}
+.menu a span{
+	margin-left: 10px;
+}
+.menu ul li:hover ul{
+	display: block;
+	position: absolute;
+}
+@media (max-width: 768px){
+	header label{
+		display: block;
+	}
+	.menu{
+		position: absolute;
+		top: 70px
+		left: 0;
+		width: 100%;
+		transform: translateX(-100%);
+		transition: all 0.3s;
+	}
+	.menu ul {
+		display: block;
+		background:#bf01c7;
+	}
+	.menu ul li:hover ul{
+		display: none;
+		position: static;
+	}
+	.menu a span{
+		position: absolute;
+		right: 5px;
+
+	}
+	#btn-menu:checked ~ .menu{
+		transform: translateX(0%);
+	}
+	.menu ul ul{
+		background: rgba(0,0,0,0.4);
+	}
+	.menu ul ul a{
+		padding: 15px 20px;
+	}
+}
+body {
+	background:url(../img/consejo.jpg);
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-attachment: fixed;
+}
+}
